@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>echo var_dump(\$${1:variable});</string>
+	<key>name</key>
+	<string>echo var_dump();</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ev</string>
+	<key>uuid</key>
+	<string>C2427BC0-45AA-46BC-9AA1-B8D6147D43DF</string>
+</dict>
+</plist>
