@@ -8,7 +8,7 @@
 	<string>rv=`CocoaDialog ok-msgbox --text "Are you sure you want to close TextMate?" --icon info`
 
 if [ "$rv" == "1" ]; then
-    osascript -e 'tell app "TextMate" to quit' &amp;&gt;/dev/null
+    osascript -e "tell app \"$(basename "$TM_APP_PATH")\" to quit"
 elif [ "$rv" == "2" ]; then
     exit
 fi</string>
