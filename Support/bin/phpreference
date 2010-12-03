@@ -4,62 +4,13 @@
 //Get the arguments
 $function = $_SERVER['argv'][1];
 
-//Search for it on php.net
-$html = '';
-$url = 'http://www.php.net/' . $function;
+//Get the documentation from the index
+$line = exec(sprintf("grep ':\"%s\";' index.txt", $function));
 
-$response = getWebPage($url);
-
-preg_match('/<p class="verinfo">\(([a-zA-Z0-9\s,\-]*)\)<\/p>/', $response['content'], $versionInfo);
-$version = $versionInfo[1];
-
-preg_match('/<div class="methodsynopsis dc-description">([\w\n\s\d<>,\.\/?\'"\]\[=+-_\)\(*&^%\$#@!]*)<\/div>/', $response['content'], $functionSignature);
-$functionSignature = strip_tags($functionSignature[1]);
-$functionSignature = str_replace("\n", '', $functionSignature);
-$functionSignature = preg_replace('/\s[\s]*/', ' ', $functionSignature);
-$functionSignature = substr($functionSignature, 0, strpos($functionSignature, ')') + 1);
-$functionSignature = trim($functionSignature);
-
-preg_match('/<p class="refpurpose"><span class="refname">[\w\s\d-_]*<\/span> (&mdash;)?([\w\n\s\d<>,\.\/?\'"\]\[=+-_\)\(*&^%\$#@!]*)<\/p>/', $response['content'], $functionDescription);
-$functionDescription = strip_tags($functionDescription[2]);
-$functionDescription = str_replace("\n", '', $functionDescription);
-$functionDescription = preg_replace('/\s[\s]*/', ' ', $functionDescription);
-$functionDescription = trim($functionDescription);
-
-echo sprintf("(%s) - %s\n\n%s", $version, $functionSignature, $functionDescription);
-
-/**
- * Get a web file (HTML, XHTML, XML, image, etc.) from a URL. Return an
- * array containing the HTTP server response header fields and content.
- */
-function getWebPage($url){
-    $options = array(
-        CURLOPT_RETURNTRANSFER => true, // return web page
-        CURLOPT_HEADER => false, // don't return headers
-        CURLOPT_FOLLOWLOCATION => true, // follow redirects
-        CURLOPT_ENCODING => "", // handle all encodings
-        CURLOPT_USERAGENT => "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; es-ES; rv:1.9.1.2) Gecko/20090729 Firefox/3.5.2 FirePHP/0.3", // who am i
-        CURLOPT_AUTOREFERER => true, // set referer on redirect
-        CURLOPT_CONNECTTIMEOUT => 120, // timeout on connect
-        CURLOPT_TIMEOUT => 120, // timeout on response
-        CURLOPT_MAXREDIRS => 10, // stop after 10 redirects
-    );
-
-    $ch = curl_init($url);
-    curl_setopt_array($ch, $options);
-    $content = curl_exec($ch);
-    $err = curl_errno($ch);
-    $errmsg = curl_error($ch);
-    $header = curl_getinfo($ch);
-    curl_close($ch);
-
-    $header['errno'] = $err;
-    $header['errmsg'] = $errmsg;
-    $header['content'] = $content;
+if(!empty($line)){
+    $documentation = unserialize($line);
     
-    if($err == 0){
-      return $header;
-    }else{
-      echo 'Error recuperando pagina ' . $url;
-    }
+    echo vsprintf("(%s) - %s\n\n%s", $documentation);
+}else{
+    echo sprintf("No documentation found for word %s", $function);
 }
