@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>revs=$("$TM_BUNDLE_SUPPORT"/bin/update_php_reference 2&gt; &gt;(CocoaDialog progressbar --indeterminate --title "Updating..." --text "Updating the documentation from php.net..." ))
+
+rv=`CocoaDialog ok-msgbox --text "$revs" --icon info --no-cancel --float --timeout 30`</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Update PHP function reference</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>uuid</key>
+	<string>3C8235A9-6DCA-4B3F-BE8D-D47D06DEC2D1</string>
+</dict>
+</plist>

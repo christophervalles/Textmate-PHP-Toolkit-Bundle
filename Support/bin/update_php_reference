@@ -1,0 +1,45 @@
+#!/usr/bin/php
+<?php
+
+ini_set('memory_limit', '1G');
+
+$index = '';
+
+//Get the last version of the documentation from the php.net website
+$gzFile = file_get_contents('http://es.php.net/get/php_manual_en.html.gz/from/this/mirror');
+
+//Write it
+file_put_contents('tmp_reference.html.gz', $gzFile);
+
+//Extract the html
+exec('gunzip tmp_reference.html.gz');
+
+//Parse the file
+$manual = file_get_contents('tmp_reference.html');
+$manual = str_replace(array("\n", "\t"), array('', ''), $manual);
+$manual = preg_replace('/\s[\s]*/', ' ', $manual);
+
+preg_match_all('/<h1 class="refname">([:\w\d-_]*)<\/h1> <p class="verinfo">\(([\w\d-_\s&=;\.,]*)\)<\/p><p class="refpurpose"><span class="refname">[:\w\d-_]*<\/span> &mdash; <span class="dc-title">([\w\d\s.\.]*)<\/span><\/p>[\w\s\d-_<>\(\)\[\]$&;,\.#\/=":]*<div class="[\w\d\s-_]*dc-description">([\w\s\d-_<>\(\)\[\]$&;,\.#\/=":]*)/', $manual, $info);
+
+for($x=0;$x<count($info[0]);$x++){
+    $info[4][$x] = substr($info[4][$x], 0, strpos($info[4][$x], ')</div>') + 1);
+    $info[4][$x] = strip_tags($info[4][$x]);
+    $info[4][$x] = str_replace("\n", '', $info[4][$x]);
+    $info[4][$x] = preg_replace('/\s[\s]*/', ' ', $info[4][$x]);
+    $info[4][$x] = trim($info[4][$x]);
+    
+    $index .= serialize(array(
+        htmlspecialchars_decode($info[1][$x]), 
+        htmlspecialchars_decode($info[2][$x]), 
+        htmlspecialchars_decode($info[4][$x]), 
+        htmlspecialchars_decode($info[3][$x]))
+    ) . PHP_EOL;
+}
+
+//Write the index
+file_put_contents('index.txt', $index);
+
+//Remove the temporal documentation
+unlink('tmp_reference.html');
+
+echo 'PHP Documentation updated successfully';

@@ -5,13 +5,13 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>"$TM_BUNDLE_SUPPORT/bin/phpreference" $TM_CURRENT_WORD</string>
+	<string>"$TM_BUNDLE_SUPPORT"/bin/php_reference $TM_CURRENT_WORD</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
 	<string>^?</string>
 	<key>name</key>
-	<string>PHP function reference</string>
+	<string>Show PHP function reference</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>uuid</key>

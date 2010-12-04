@@ -5,7 +5,7 @@
 	<key>content</key>
 	<string>trigger_error('Method ' . __METHOD__ . ' is deprecated');</string>
 	<key>name</key>
-	<string>Trigger Deprecated</string>
+	<string>Mark function as deprecated</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
