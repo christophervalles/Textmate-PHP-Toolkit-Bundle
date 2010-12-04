@@ -31,8 +31,8 @@ for($x=0;$x<count($info[0]);$x++){
     $index .= serialize(array(
         htmlspecialchars_decode($info[1][$x]), 
         htmlspecialchars_decode($info[2][$x]), 
-        htmlspecialchars_decode($info[4][$x]), 
-        htmlspecialchars_decode($info[3][$x]))
+        htmlspecialchars_decode($info[3][$x]), 
+        htmlspecialchars_decode($info[4][$x]))
     ) . PHP_EOL;
 }
 

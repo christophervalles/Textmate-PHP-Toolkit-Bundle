@@ -10,6 +10,7 @@ $line = exec(sprintf("grep ':\"%s\";' '" . realpath(dirname(__FILE__)) . "/index
 if(!empty($line)){
     $documentation = unserialize($line);
     
+    unset($documentation[0]);
     echo vsprintf("(%s) - %s\n\n%s", $documentation);
 }else{
     echo sprintf("No documentation found for word %s", $function);
