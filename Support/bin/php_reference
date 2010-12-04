@@ -5,7 +5,7 @@
 $function = $_SERVER['argv'][1];
 
 //Get the documentation from the index
-$line = exec(sprintf("grep ':\"%s\";' index.txt", $function));
+$line = exec(sprintf("grep ':\"%s\";' '" . realpath(dirname(__FILE__)) . "/index.txt'", $function));
 
 if(!empty($line)){
     $documentation = unserialize($line);
