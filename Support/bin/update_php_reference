@@ -16,23 +16,28 @@ exec('gunzip tmp_reference.html.gz');
 
 //Parse the file
 $manual = file_get_contents('tmp_reference.html');
-$manual = str_replace(array("\n", "\t"), array('', ''), $manual);
-$manual = preg_replace('/\s[\s]*/', ' ', $manual);
 
-preg_match_all('/<h1 class="refname">([:\w\d-_]*)<\/h1> <p class="verinfo">\(([\w\d-_\s&=;\.,]*)\)<\/p><p class="refpurpose"><span class="refname">[:\w\d-_]*<\/span> &mdash; <span class="dc-title">([\w\d\s.\.]*)<\/span><\/p>[\w\s\d-_<>\(\)\[\]$&;,\.#\/=":]*<div class="[\w\d\s-_]*dc-description">([\w\s\d-_<>\(\)\[\]$&;,\.#\/=":]*)/', $manual, $info);
+exec("tidy -o tmp_reference.xml -f /dev/null -asxhtml -numeric tmp_reference.html");
 
-for($x=0;$x<count($info[0]);$x++){
-    $info[4][$x] = substr($info[4][$x], 0, strpos($info[4][$x], ')</div>') + 1);
-    $info[4][$x] = strip_tags($info[4][$x]);
-    $info[4][$x] = str_replace("\n", '', $info[4][$x]);
-    $info[4][$x] = preg_replace('/\s[\s]*/', ' ', $info[4][$x]);
-    $info[4][$x] = trim($info[4][$x]);
+$xmlContents = file_get_contents('tmp_reference.xml');
+$xmlContents = str_replace('xmlns=', 'ns=', $xmlContents);
+
+//Load the xml
+$xml = new SimpleXMLElement($xmlContents);
+$functions = $xml->xpath('//div[@class="refentry"]');
+
+foreach($functions as $f){
+    $funcName = $f->div[0]->h1;
+    $funcVer = $f->div[0]->p[0];
+    $funcSignature = str_replace("\n", '', strip_tags($f->div[1]->div->asXML()));
+    $funcSignature = preg_replace('/\s[\s]*/', ' ', $funcSignature);
+    $funcDescription = str_replace("\n", '', strip_tags($f->div[1]->p));
     
     $index .= serialize(array(
-        htmlspecialchars_decode($info[1][$x]), 
-        htmlspecialchars_decode($info[2][$x]), 
-        htmlspecialchars_decode($info[3][$x]), 
-        htmlspecialchars_decode($info[4][$x]))
+        htmlspecialchars_decode($funcName), 
+        htmlspecialchars_decode($funcVer), 
+        htmlspecialchars_decode($funcSignature), 
+        htmlspecialchars_decode($funcDescription))
     ) . PHP_EOL;
 }
 
@@ -41,5 +46,6 @@ file_put_contents('index.txt', $index);
 
 //Remove the temporal documentation
 unlink('tmp_reference.html');
+unlink('tmp_reference.xml');
 
 echo 'PHP Documentation updated successfully';
