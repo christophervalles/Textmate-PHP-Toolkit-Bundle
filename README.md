@@ -21,3 +21,11 @@ Execute the following commands:
 
     cd ~/Library/Application\ Support/TextMate/Bundles
     git clone git://github.com/christophervalles/Textmate-Useful-Snippets-Bundle.git Useful\ Snippets.tmbundle
+
+Dependencies
+============
+
+You must have installed the following tools
+
+* PHP Cli
+* Tidy
