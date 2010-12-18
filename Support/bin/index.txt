@@ -4,7 +4,7 @@ a:4:{i:0;s:8:"$GLOBALS";i:1;s:5:" —
 ";i:2;s:0:"";i:3;s:160:"An associative containing references to all variables which are currently definedin the global scope of the script. The variable names are the keysof the array.";}
 a:4:{i:0;s:8:"$_SERVER";i:1;s:9:" --
  —
-";i:2;s:0:"";i:3;s:372:" is an array containing informationsuch as headers, paths, and script locations. The entries in thisarray are created by the web server. There is no guarantee thatevery web server will provide any of these; servers may omit some,or provide others not listed here. That said, a large number ofthese variables are accounted for in the , so you should beable to expect those.";}
+";i:2;s:0:"";i:3;s:372:" is an array containing informationsuch as headers, paths, and script locations. The entries in thisarray are created by the web server. There is no guarantee thatevery web server will provide any of these; servers may omit some,or provide others not listed here. That said, a large number ofthese variables are accounted for in the , so you should be able to expectthose.";}
 a:4:{i:0;s:5:"$_GET";i:1;s:9:" --
  —
 ";i:2;s:0:"";i:3;s:85:"An associative array of variables passed to thecurrent script via the URL parameters.";}
@@ -36,7 +36,7 @@ a:4:{i:0;s:5:"$argv";i:1;s:5:" —
 a:4:{i:0;s:22:"Exception::__construct";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:106:"public Exception::__construct() ([ string $message ="" [, int $code = 0 [, Exception $previous =NULL ]]] )";i:3;s:25:"Constructs the Exception.";}
 a:4:{i:0;s:21:"Exception::getMessage";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:49:"final publicstring Exception::getMessage ( void )";i:3;s:30:"Returns the Exception message.";}
 a:4:{i:0;s:22:"Exception::getPrevious";i:1;s:16:"(PHP 5 >= 5.3.0)";i:2;s:53:"final publicException Exception::getPrevious ( void )";i:3;s:52:"Returns previous Exception (the thirdparameter of ).";}
-a:4:{i:0;s:18:"Exception::getCode";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:43:"final publicint Exception::getCode ( void )";i:3;s:27:"Returns the Exception code.";}
+a:4:{i:0;s:18:"Exception::getCode";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:45:"final publicmixed Exception::getCode ( void )";i:3;s:27:"Returns the Exception code.";}
 a:4:{i:0;s:18:"Exception::getFile";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:46:"final publicstring Exception::getFile ( void )";i:3;s:54:"Get the name of the file the exceptionwas thrown from.";}
 a:4:{i:0;s:18:"Exception::getLine";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:43:"final publicint Exception::getLine ( void )";i:3;s:50:"Returns line number where theexception was thrown.";}
 a:4:{i:0;s:19:"Exception::getTrace";i:1;s:16:"(PHP 5 >= 5.1.0)";i:2;s:46:"final publicarray Exception::getTrace ( void )";i:3;s:34:"Returns the Exception stack trace.";}
@@ -64,6 +64,29 @@ a:4:{i:0;s:19:"SSL context options";i:1;s:5:" — ";i:2;s:0:"";i:3;s:36:"Context
 a:4:{i:0;s:20:"CURL context options";i:1;s:5:" — ";i:2;s:0:"";i:3;s:94:"CURL context options are available when the extension was compiledusing the  configure option.";}
 a:4:{i:0;s:20:"Phar context options";i:1;s:5:" — ";i:2;s:0:"";i:3;s:29:"Context options for  wrapper.";}
 a:4:{i:0;s:18:"Context parameters";i:1;s:5:" — ";i:2;s:0:"";i:3;s:43:"These  can be set on a using the  function.";}
+a:4:{i:0;s:10:"Filesystem";i:1;s:5:"
+— ";i:2;s:0:"";i:3;s:422:" is the defaultwrapper used with PHP and represents the local filesystem. When arelative path is specified (a path which does not begin with /, \,\\, or a Windows drive letter) the path provided will be appliedagainst the current working directory. In many cases this is thedirectory in which the script resides unless it has been changed.Using the CLI sapi, this defaults to the directory from which thescript was called.";}
+a:4:{i:0;s:14:"HTTP and HTTPS";i:1;s:5:"
+— ";i:2;s:0:"";i:3;s:263:"Allows read-only access to files/resources via HTTP1.0, using the HTTP GET method. A  header is sent withthe request to handle name-based virtual hosts. If you haveconfigured a string using your  file or thestream context, it will also be included in the request.";}
+a:4:{i:0;s:12:"FTP and FTPS";i:1;s:5:"
+— ";i:2;s:0:"";i:3;s:144:"Allows read access to existing files and creationof new files via FTP. If the server does not support passive modeftp, the connection will fail.";}
+a:4:{i:0;s:16:"PHP input/output";i:1;s:5:"
+— ";i:2;s:0:"";i:3;s:449:", and  allow direct access to thecorresponding input or output stream of the PHP process. The streamreferences a duplicate file descriptor, so if you open  and later close it, you close onlyyour copy of the descriptor-the actual stream referenced by is unaffected. Note that PHP exhibited buggybehavior in this regard until PHP 5.2.1. It is recommended that yousimply use the constants , and  instead ofmanually opening streams using these wrappers.";}
+a:4:{i:0;s:19:"zlib, bzip2 and zip";i:1;s:5:" — ";i:2;s:0:"";i:3;s:53:" PHP 4.0.4 -PHP 4.2.3 (systems with fopencookie only)";}
+a:4:{i:0;s:7:"data://";i:1;s:5:" —
+";i:2;s:0:"";i:3;s:52:"The  () stream wrapper is available since PHP 5.2.0.";}
+a:4:{i:0;s:4:"Glob";i:1;s:5:" —
+";i:2;s:0:"";i:3;s:48:"The  streamwrapper is available since PHP 5.3.0.";}
+a:4:{i:0;s:7:"phar://";i:1;s:5:" —
+";i:2;s:0:"";i:3;s:78:"The  streamwrapper is available since PHP 5.3.0. See  fordetailed description.";}
+a:4:{i:0;s:7:"ssh2://";i:1;s:5:" —
+";i:2;s:0:"";i:3;s:27:"    PHP 4.3.0 and up (PECL)";}
+a:4:{i:0;s:6:"rar://";i:1;s:5:" —
+";i:2;s:0:"";i:3;s:299:"The wrapper takes the url encoded path to the RARarchive (relative or absolute), an optional asterik (), anoptional number sign () and an optional url encoded entryname, as stored in the archive. Specifying an entry name requiresthe number sign; a leading forward slash in the entry name isoptional.";}
+a:4:{i:0;s:6:"ogg://";i:1;s:5:" —
+";i:2;s:0:"";i:3;s:404:"Files opened for reading via the  wrapper are treated as compressed audioencoded using the  codec. Similarly, files openedfor writing or appending via the wrapper are writen as compressed audio data. , when used on an file opened for reading will return variousdetails about the stream including the  tag, any included , the number of , the sampling , and the encoding rate range describedby: , , , and .";}
+a:4:{i:0;s:9:"expect://";i:1;s:5:"
+— ";i:2;s:0:"";i:3;s:93:"Streams opened via the  wrapper provide access to process'esstdio, stdout and stderr via PTY.";}
 a:4:{i:0;s:7:"apc_add";i:1;s:20:"(PECL apc >= 3.0.13)";i:2;s:56:"bool apc_add (string$key , mixed $var [, int $ttl = 0 ])";i:3;s:68:"Caches a variable in the data store,only if it's not already stored.";}
 a:4:{i:0;s:12:"apc_bin_dump";i:1;s:19:"(PECL apc >= 3.1.4)";i:2;s:60:"string apc_bin_dump ([ array $files [, array $user_vars ]] )";i:3;s:168:"Returns a binary dump of the givenfiles and user variables from the APC cache. A for files or user_vars signals a dump of every entry, whereasarray() will dump nothing.";}
 a:4:{i:0;s:16:"apc_bin_dumpfile";i:1;s:19:"(PECL apc >= 3.1.4)";i:2;s:113:"int apc_bin_dumpfile ( array $files , array $user_vars , string $filename [, int $flags [, resource $context ]] )";i:3;s:96:"Outputs a binary dump of the givenfiles and user variables from the APC cache to the named file.";}
@@ -2864,25 +2887,44 @@ a:4:{i:0;s:19:"xdiff_string_merge3";i:1;s:21:"(PECL xdiff >= 0.2.0)";i:2;s:106:"
 a:4:{i:0;s:25:"xdiff_string_patch_binary";i:1;s:21:"(PECL xdiff >= 0.2.0)";i:2;s:64:"string xdiff_string_patch_binary ( string $str , string $patch )";i:3;s:122:"Patches a string  with a binary . This function accepts patches createdboth via  and  functions or theirfile counterparts.";}
 a:4:{i:0;s:18:"xdiff_string_patch";i:1;s:21:"(PECL xdiff >= 0.2.0)";i:2;s:92:"string xdiff_string_patch ( string $str , string $patch [, int $flags [, string &$error ]] )";i:3;s:255:"Patches a  string with an unified patch in parameter and returns theresult.  has to be anunified diff created by / function. An optional parameter specifies mode ofoperation. Any rejected parts of the patch will be stored inside variable if it isprovided.";}
 a:4:{i:0;s:20:"xdiff_string_rabdiff";i:1;s:21:"(PECL xdiff >= 0.2.0)";i:2;s:65:"string xdiff_string_bdiff ( string $old_data , string $new_data )";i:3;s:288:"Makes a binary diff of two strings andreturns the result. The difference between this function and is differentalgorithm used which should result in faster execution and smallerdiff produced. This function works with both text and binary data.Resulting patch can be later applied using /.";}
-a:4:{i:0;s:23:"enchant_broker_describe";i:1;s:23:"(PECL enchant >= 0.1.0)";i:2;s:50:"array enchant_broker_describe ( resource $broker )";i:3;s:130:"Enumerates the Enchant providers andtells you some rudimentary information about them. The same info isprovided through phpinfo().";}
-a:4:{i:0;s:26:"enchant_broker_dict_exists";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:64:"bool enchant_broker_dict_exists (resource$broker , string $tag )";i:3;s:58:"Tells if a dictionary exists or not,using a non-empty tags";}
-a:4:{i:0;s:24:"enchant_broker_free_dict";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:48:"bool enchant_broker_free_dict ( resource $dict )";i:3;s:27:"Free a dictionary resource.";}
-a:4:{i:0;s:19:"enchant_broker_free";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:45:"bool enchant_broker_free ( resource $broker )";i:3;s:48:"Free a broker resource with all itsdictionaries.";}
-a:4:{i:0;s:24:"enchant_broker_get_error";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:52:"string enchant_broker_get_error ( resource $broker )";i:3;s:52:"Returns the last error which occurredin this broker.";}
-a:4:{i:0;s:19:"enchant_broker_init";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:37:"resource enchant_broker_init ( void )";i:3;s:0:"";}
-a:4:{i:0;s:25:"enchant_broker_list_dicts";i:1;s:23:"(PECL enchant >= 1.0.1)";i:2;s:52:"mixed enchant_broker_list_dicts ( resource $broker )";i:3;s:59:"Returns a list of availabledictionaries with their details.";}
-a:4:{i:0;s:27:"enchant_broker_request_dict";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:69:"resource enchant_broker_request_dict (resource$broker , string $tag )";i:3;s:120:"create a new dictionary using tag, thenon-empty language tag you wish to request a dictionary for("en_US", "de_DE", ...)";}
-a:4:{i:0;s:31:"enchant_broker_request_pwl_dict";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:78:"resource enchant_broker_request_pwl_dict (resource$broker , string $filename )";i:3;s:89:"Creates a dictionary using a PWL file.A PWL file is personal word file one word per line.";}
-a:4:{i:0;s:27:"enchant_broker_set_ordering";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:84:"bool enchant_broker_set_ordering (resource$broker , string $tag , string $ordering )";i:3;s:305:"Declares a preference of dictionariesto use for the language described/referred to by 'tag'. Theordering is a comma delimited list of provider names. As a specialexception, the "*" tag can be used as a language tag to declare adefault ordering for any language that does not explicitly declarean ordering.";}
-a:4:{i:0;s:28:"enchant_dict_add_to_personal";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:65:"void enchant_dict_add_to_personal (resource$dict , string $word )";i:3;s:56:"Add a word to personal word list ofthe given dictionary.";}
-a:4:{i:0;s:27:"enchant_dict_add_to_session";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:64:"void enchant_dict_add_to_session (resource$dict , string $word )";i:3;s:95:"Add a word to the given dictionary. Itwill be added only for the active spell-checking session.";}
-a:4:{i:0;s:18:"enchant_dict_check";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:57:"bool enchant_dict_check ( resource $dict , string $word )";i:3;s:57:"If the word is correctly spelledreturn , otherwise return";}
-a:4:{i:0;s:21:"enchant_dict_describe";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:46:"mixed enchant_dict_describe ( resource $dict )";i:3;s:37:"Returns the details of thedictionary.";}
-a:4:{i:0;s:22:"enchant_dict_get_error";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:48:"string enchant_dict_get_error ( resource $dict )";i:3;s:53:"Returns the last error of the currentspelling-session";}
-a:4:{i:0;s:26:"enchant_dict_is_in_session";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:63:"bool enchant_dict_is_in_session (resource$dict , string $word )";i:3;s:65:"Tells whether or not a word alreadyexists in the current session.";}
-a:4:{i:0;s:24:"enchant_dict_quick_check";i:1;s:26:"(PECL enchant:0.2.0-1.0.1)";i:2;s:88:"bool enchant_dict_quick_check ( resource $dict , string $word [, array &$suggestions ] )";i:3;s:130:"If the word is correctly spelledreturn , otherwise return, if suggestions variable is provided, fill itwith spelling alternatives.";}
-a:4:{i:0;s:30:"enchant_dict_store_replacement";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:80:"void enchant_dict_store_replacement (resource$dict , string $mis , string $cor )";i:3;s:214:"Add a correction for 'mis' using'cor'. Notes that you replaced @mis with @cor, so it's possiblymore likely that future occurrences of @mis will be replaced with@cor. So it might bump @cor up in the suggestion list.";}
-a:4:{i:0;s:20:"enchant_dict_suggest";i:1;s:24:"(PECL enchant >= 0.1.0 )";i:2;s:60:"array enchant_dict_suggest ( resource $dict , string $word )";i:3;s:0:"";}
+a:4:{i:0;s:23:"enchant_broker_describe";i:1;s:39:"(PHP 5 >= 5.3.0, PECL enchant >=
+0.1.0)";i:2;s:50:"array enchant_broker_describe ( resource $broker )";i:3;s:130:"Enumerates the Enchant providers andtells you some rudimentary information about them. The same info isprovided through phpinfo().";}
+a:4:{i:0;s:26:"enchant_broker_dict_exists";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:64:"bool enchant_broker_dict_exists (resource$broker , string $tag )";i:3;s:58:"Tells if a dictionary exists or not,using a non-empty tags";}
+a:4:{i:0;s:24:"enchant_broker_free_dict";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:48:"bool enchant_broker_free_dict ( resource $dict )";i:3;s:27:"Free a dictionary resource.";}
+a:4:{i:0;s:19:"enchant_broker_free";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:45:"bool enchant_broker_free ( resource $broker )";i:3;s:48:"Free a broker resource with all itsdictionaries.";}
+a:4:{i:0;s:24:"enchant_broker_get_error";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:52:"string enchant_broker_get_error ( resource $broker )";i:3;s:52:"Returns the last error which occurredin this broker.";}
+a:4:{i:0;s:19:"enchant_broker_init";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:37:"resource enchant_broker_init ( void )";i:3;s:0:"";}
+a:4:{i:0;s:25:"enchant_broker_list_dicts";i:1;s:39:"(PHP 5 >= 5.3.0, PECL enchant >=
+1.0.1)";i:2;s:52:"mixed enchant_broker_list_dicts ( resource $broker )";i:3;s:59:"Returns a list of availabledictionaries with their details.";}
+a:4:{i:0;s:27:"enchant_broker_request_dict";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:69:"resource enchant_broker_request_dict (resource$broker , string $tag )";i:3;s:120:"create a new dictionary using tag, thenon-empty language tag you wish to request a dictionary for("en_US", "de_DE", ...)";}
+a:4:{i:0;s:31:"enchant_broker_request_pwl_dict";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:78:"resource enchant_broker_request_pwl_dict (resource$broker , string $filename )";i:3;s:89:"Creates a dictionary using a PWL file.A PWL file is personal word file one word per line.";}
+a:4:{i:0;s:27:"enchant_broker_set_ordering";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:84:"bool enchant_broker_set_ordering (resource$broker , string $tag , string $ordering )";i:3;s:305:"Declares a preference of dictionariesto use for the language described/referred to by 'tag'. Theordering is a comma delimited list of provider names. As a specialexception, the "*" tag can be used as a language tag to declare adefault ordering for any language that does not explicitly declarean ordering.";}
+a:4:{i:0;s:28:"enchant_dict_add_to_personal";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:65:"void enchant_dict_add_to_personal (resource$dict , string $word )";i:3;s:56:"Add a word to personal word list ofthe given dictionary.";}
+a:4:{i:0;s:27:"enchant_dict_add_to_session";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:64:"void enchant_dict_add_to_session (resource$dict , string $word )";i:3;s:95:"Add a word to the given dictionary. Itwill be added only for the active spell-checking session.";}
+a:4:{i:0;s:18:"enchant_dict_check";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:57:"bool enchant_dict_check ( resource $dict , string $word )";i:3;s:57:"If the word is correctly spelledreturn , otherwise return";}
+a:4:{i:0;s:21:"enchant_dict_describe";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:46:"mixed enchant_dict_describe ( resource $dict )";i:3;s:37:"Returns the details of thedictionary.";}
+a:4:{i:0;s:22:"enchant_dict_get_error";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:48:"string enchant_dict_get_error ( resource $dict )";i:3;s:53:"Returns the last error of the currentspelling-session";}
+a:4:{i:0;s:26:"enchant_dict_is_in_session";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:63:"bool enchant_dict_is_in_session (resource$dict , string $word )";i:3;s:65:"Tells whether or not a word alreadyexists in the current session.";}
+a:4:{i:0;s:24:"enchant_dict_quick_check";i:1;s:42:"(PHP 5 >= 5.3.0, PECL
+enchant:0.2.0-1.0.1)";i:2;s:88:"bool enchant_dict_quick_check ( resource $dict , string $word [, array &$suggestions ] )";i:3;s:130:"If the word is correctly spelledreturn , otherwise return, if suggestions variable is provided, fill itwith spelling alternatives.";}
+a:4:{i:0;s:30:"enchant_dict_store_replacement";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:80:"void enchant_dict_store_replacement (resource$dict , string $mis , string $cor )";i:3;s:214:"Add a correction for 'mis' using'cor'. Notes that you replaced @mis with @cor, so it's possiblymore likely that future occurrences of @mis will be replaced with@cor. So it might bump @cor up in the suggestion list.";}
+a:4:{i:0;s:20:"enchant_dict_suggest";i:1;s:40:"(PHP 5 >= 5.3.0, PECL enchant >= 0.1.0
+)";i:2;s:60:"array enchant_dict_suggest ( resource $dict , string $word )";i:3;s:0:"";}
 a:4:{i:0;s:15:"fribidi_log2vis";i:1;s:56:"(PHP 4 >= 4.0.4 and PHP 4 <= 4.1.0, PECL
 fribidi >= 1.0)";i:2;s:73:"string fribidi_log2vis ( string $str , string $direction , int $charset )";i:3;s:41:"Converts a logical string to a visualone.";}
 a:4:{i:0;s:23:"bind_textdomain_codeset";i:1;s:23:"(PHP 4 >= 4.2.0, PHP 5)";i:2;s:67:"string bind_textdomain_codeset ( string $domain , string $codeset )";i:3;s:94:"With , you can set inwhich encoding will be messages from  returned by  and similar functions.";}
@@ -5878,8 +5920,22 @@ a:4:{i:0;s:9:"yaml_emit";i:1;s:20:"(PECL yaml >= 0.5.0)";i:2;s:105:"string yaml_
 a:4:{i:0;s:15:"yaml_parse_file";i:1;s:20:"(PECL yaml >= 0.4.0)";i:2;s:93:"mixed yaml_parse_file ( string $filename [, int $pos = 0[, int&$ndocs [,array$callbacks ]]] )";i:3;s:80:"Convert all or part of a YAML documentstream read from a file to a PHP variable.";}
 a:4:{i:0;s:14:"yaml_parse_url";i:1;s:20:"(PECL yaml >= 0.4.0)";i:2;s:87:"mixed yaml_parse_url ( string $url [, int $pos = 0[, int&$ndocs [,array$callbacks ]]] )";i:3;s:79:"Convert all or part of a YAML documentstream read from a URL to a PHP variable.";}
 a:4:{i:0;s:10:"yaml_parse";i:1;s:20:"(PECL yaml >= 0.4.0)";i:2;s:85:"mixed yaml_parse ( string $input [, int $pos = 0[, int&$ndocs [,array$callbacks ]]] )";i:3;s:63:"Convert all or part of a YAML documentstream to a PHP variable.";}
+a:4:{i:0;s:23:"AMQPConnection::connect";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:45:"public booleanAMQPConnection::connect (void )";i:3;s:59:"This method will initiate a connectionwith the AMQP broker.";}
 a:4:{i:0;s:27:"AMQPConnection::__construct";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:60:"AMQPConnection::__construct ([array$credentials =array() ] )";i:3;s:64:"Creates an instance representing a connection to an AMQP broker.";}
+a:4:{i:0;s:26:"AMQPConnection::disconnect";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:48:"public booleanAMQPConnection::disconnect (void )";i:3;s:62:"This method will close an openconnection with the AMQP broker.";}
 a:4:{i:0;s:27:"AMQPConnection::isConnected";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:47:"public void AMQPConnection::isConnected (void )";i:3;s:140:"This method will check whether theconnection to the AMQP broker is still valid. It does so bychecking the return status of the last command.";}
+a:4:{i:0;s:25:"AMQPConnection::reconnect";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:47:"public booleanAMQPConnection::reconnect (void )";i:3;s:94:"This method will close any openconnections and initiate a new connection with the AMQP broker.";}
+a:4:{i:0;s:23:"AMQPConnection::setHost";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:52:"public void AMQPConnection::setHost ( string $host )";i:3;s:68:"This method will set the hostname usedto connect to the AMQP broker.";}
+a:4:{i:0;s:24:"AMQPConnection::setLogin";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:54:"public void AMQPConnection::setLogin ( string $login )";i:3;s:72:"This method will set the login stringused to connect to the AMQP broker.";}
+a:4:{i:0;s:27:"AMQPConnection::setPassword";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:58:"public void AMQPConnection::setPassword (string$password )";i:3;s:75:"This method will set the passwordstring used to connect to the AMQP broker.";}
+a:4:{i:0;s:23:"AMQPConnection::setPort";i:1;s:56:"(No version information available, might only be
+in SVN)";i:2;s:49:"public void AMQPConnection::setPort ( int $port )";i:3;s:64:"This method will set the port used toconnect to the AMQP broker.";}
 a:4:{i:0;s:18:"AMQPExchange::bind";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:75:"public void AMQPExchange::bind ( string $queue_name , string $routing_key )";i:3;s:59:"Bind an exchange to a queue using thespecified routing key.";}
 a:4:{i:0;s:25:"AMQPExchange::__construct";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:87:"AMQPExchange::__construct ( AMQPConnection $connection [, string $exchange_name ="" ] )";i:3;s:262:"Returns a new instance of anAMQPExchange object, associated with the given AMQPConnectionobject. If the parameter is specified and the an exchange by that name exists onthe broker, an instance of that specific exchange will be returned.Otherwise, the  isignored.";}
 a:4:{i:0;s:21:"AMQPExchange::declare";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:136:"public void AMQPExchange::declare ([ string $exchange_name ="" [, string $exchange_type=AMQP_EX_TYPE_DIRECT [, string $flags =NULL ]]] )";i:3;s:174:"Declare a new exchange on the brokerwith the given information. If an exchange by that name alreadyexists and the and/or  are specified, theexchange settings will be updated.";}
@@ -5890,7 +5946,7 @@ in SVN)";i:2;s:70:"public void AMQPQueue::ack ( int $delivery_tag [, int $flags 
 a:4:{i:0;s:15:"AMQPQueue::bind";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:82:"public void AMQPQueue::bind ( string $exchange_name [, string $routing_key ="" ] )";i:3;s:92:"The bind method will bind the givenqueue to the specified routing key on the given exchange.";}
 a:4:{i:0;s:17:"AMQPQueue::cancel";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:54:"public void AMQPQueue::cancel ( string $consumer_tag )";i:3;s:67:"Cancel a queue that is already boundto an exchange and routing key.";}
 a:4:{i:0;s:22:"AMQPQueue::__construct";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:78:"AMQPQueue::__construct ( string $amqp_connection [, string $queue_name ="" ] )";i:3;s:61:"Creates an  instance representing an AMQP queueon the broker.";}
-a:4:{i:0;s:18:"AMQPQueue::consume";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:80:"public void AMQPQueue::consume ( string $num_messages [, string $flags =NULL ] )";i:3;s:0:"";}
+a:4:{i:0;s:18:"AMQPQueue::consume";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:49:"public void AMQPQueue::consume ( array $options )";i:3;s:0:"";}
 a:4:{i:0;s:18:"AMQPQueue::declare";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:86:"public void AMQPQueue::declare ( string $queue_name [, int $flags =AMQP_AUTODELETE ] )";i:3;s:34:"Declare a new queue on the broker.";}
 a:4:{i:0;s:17:"AMQPQueue::delete";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:52:"public void AMQPQueue::delete ( string $queue_name )";i:3;s:97:"Delete a queue from the broker,including its entire contents of unread or unacknowledgedmessages.";}
 a:4:{i:0;s:14:"AMQPQueue::get";i:1;s:22:"(PECL amqp >= Unknown)";i:2;s:44:"public void AMQPQueue::get ( string $flags )";i:3;s:40:"Retrieve the next message from thequeue.";}
@@ -7280,7 +7336,7 @@ a:4:{i:0;s:5:"crypt";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:44:"string crypt (string$st
 a:4:{i:0;s:4:"echo";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:43:"void echo ( string $arg1 [, string $... ] )";i:3;s:23:"Outputs all parameters.";}
 a:4:{i:0;s:7:"explode";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:66:"array explode( string$delimiter , string $string [, int $limit ] )";i:3;s:118:"Returns an array of strings, each ofwhich is a substring of formed by splitting it on boundaries formed by the string.";}
 a:4:{i:0;s:7:"fprintf";i:1;s:7:"(PHP 5)";i:2;s:79:"int fprintf (resource$handle , string $format [, mixed $args [, mixed $... ]] )";i:3;s:73:"Write a string produced according to to the stream resourcespecified by .";}
-a:4:{i:0;s:26:"get_html_translation_table";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:101:"array get_html_translation_table ([int $table =HTML_SPECIALCHARS [, int $quote_style =ENT_COMPAT ]] )";i:3;s:93:" will returnthe translation table that is used internally for  and  with the default charset.";}
+a:4:{i:0;s:26:"get_html_translation_table";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:126:"array get_html_translation_table ([int $table =HTML_SPECIALCHARS [, int $quote_style =ENT_COMPAT [, string $charset_hint ]]] )";i:3;s:93:" will returnthe translation table that is used internally for  and  with the default charset.";}
 a:4:{i:0;s:6:"hebrev";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:67:"string hebrev( string$hebrew_text [, int $max_chars_per_line =0 ] )";i:3;s:43:"Converts logical Hebrew text to visualtext.";}
 a:4:{i:0;s:7:"hebrevc";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:68:"string hebrevc( string$hebrew_text [, int $max_chars_per_line =0 ] )";i:3;s:86:"This function is similar to with the difference that it convertsnewlines (\n) to "\n".";}
 a:4:{i:0;s:18:"html_entity_decode";i:1;s:23:"(PHP 4 >= 4.3.0, PHP 5)";i:2;s:97:"string html_entity_decode ( string $string [, int $quote_style =ENT_COMPAT [, string $charset ]])";i:3;s:94:" is the opposite of in that it converts all HTMLentities to their applicable characters from .";}
@@ -7430,7 +7486,7 @@ a:4:{i:0;s:7:"natsort";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:28:"bool natsort (array&$
 a:4:{i:0;s:4:"next";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:28:"mixed next ( array &$array )";i:3;s:217:" behaves like , with one difference. It advancesthe internal array pointer one place forward before returning theelement value. That means it returns the next array value andadvances the internal array pointer by one.";}
 a:4:{i:0;s:3:"pos";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:0:"";i:3;s:30:"This function is an alias of: ";}
 a:4:{i:0;s:4:"prev";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:28:"mixed prev ( array &$array )";i:3;s:34:"Rewind the internal array pointer.";}
-a:4:{i:0;s:5:"range";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:56:"array range (mixed$low , mixed $high [, number $step ] )";i:3;s:46:"Create an array containing a range ofelements.";}
+a:4:{i:0;s:5:"range";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:59:"array range (mixed$low , mixed $high [, number $step = 1] )";i:3;s:46:"Create an array containing a range ofelements.";}
 a:4:{i:0;s:5:"reset";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:29:"mixed reset ( array &$array )";i:3;s:98:" rewinds 's internal pointer to the first elementand returns the value of the first array element.";}
 a:4:{i:0;s:5:"rsort";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:60:"bool rsort (array&$array [,int $sort_flags =SORT_REGULAR ] )";i:3;s:65:"This function sorts an array inreverse order (highest to lowest).";}
 a:4:{i:0;s:7:"shuffle";i:1;s:14:"(PHP 4, PHP 5)";i:2;s:28:"bool shuffle (array&$array )";i:3;s:73:"This function shuffles (randomizes theorder of the elements in) an array.";}
@@ -7506,7 +7562,7 @@ a:4:{i:0;s:11:"deaggregate";i:1;s:16:"(PHP 4 >= 4.2.0)";i:2;s:59:"void deaggrega
 a:4:{i:0;s:18:"Reflection::export";i:1;s:7:"(PHP 5)";i:2;s:85:"public staticvoidReflection::export (Reflector$reflector [, string $return =false ] )";i:3;s:21:"Exports a reflection.";}
 a:4:{i:0;s:28:"Reflection::getModifierNames";i:1;s:7:"(PHP 5)";i:2;s:65:"public staticarray Reflection::getModifierNames (int $modifiers )";i:3;s:20:"Gets modifier names.";}
 a:4:{i:0;s:24:"ReflectionClass::__clone";i:1;s:7:"(PHP 5)";i:2;s:49:"final privatevoidReflectionClass::__clone (void )";i:3;s:7:"Clones.";}
-a:4:{i:0;s:28:"ReflectionClass::__construct";i:1;s:7:"(PHP 5)";i:2;s:47:"ReflectionClass::__construct (string$argument )";i:3;s:24:"Constructs a new object.";}
+a:4:{i:0;s:28:"ReflectionClass::__construct";i:1;s:7:"(PHP 5)";i:2;s:46:"ReflectionClass::__construct (mixed$argument )";i:3;s:24:"Constructs a new object.";}
 a:4:{i:0;s:23:"ReflectionClass::export";i:1;s:7:"(PHP 5)";i:2;s:88:"public staticstring ReflectionClass::export ( mixed $argument [, bool $return =false ] )";i:3;s:26:"Exports a reflected class.";}
 a:4:{i:0;s:28:"ReflectionClass::getConstant";i:1;s:7:"(PHP 5)";i:2;s:55:"public mixedReflectionClass::getConstant( string$name )";i:3;s:27:"Gets the defined constants.";}
 a:4:{i:0;s:29:"ReflectionClass::getConstants";i:1;s:7:"(PHP 5)";i:2;s:49:"public arrayReflectionClass::getConstants (void )";i:3;s:35:"Gets defined constants from aclass.";}
