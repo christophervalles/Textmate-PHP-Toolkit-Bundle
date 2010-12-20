@@ -4,22 +4,24 @@
 ini_set('memory_limit', '1G');
 
 $index = '';
+$path = realpath(dirname(__FILE__));
+$escapedPath = str_replace(' ', '\ ', $path);
 
 //Get the last version of the documentation from the php.net website
 $gzFile = file_get_contents('http://es.php.net/get/php_manual_en.html.gz/from/this/mirror');
 
 //Write it
-file_put_contents('tmp_reference.html.gz', $gzFile);
+file_put_contents($path . '/tmp_reference.html.gz', $gzFile);
 
 //Extract the html
-exec('gunzip tmp_reference.html.gz');
+exec('gunzip ' . $escapedPath . '/tmp_reference.html.gz');
 
 //Parse the file
-$manual = file_get_contents('tmp_reference.html');
+$manual = file_get_contents($path . '/tmp_reference.html');
 
-exec("tidy -o tmp_reference.xml -f /dev/null -asxhtml -numeric tmp_reference.html");
+exec('tidy -o ' . $escapedPath . '/tmp_reference.xml -f /dev/null -asxhtml -numeric ' . $escapedPath . '/tmp_reference.html');
 
-$xmlContents = file_get_contents('tmp_reference.xml');
+$xmlContents = file_get_contents($path . '/tmp_reference.xml');
 $xmlContents = str_replace('xmlns=', 'ns=', $xmlContents);
 
 //Load the xml
@@ -42,10 +44,10 @@ foreach($functions as $f){
 }
 
 //Write the index
-file_put_contents('index.txt', $index);
+file_put_contents($path . '/index.txt', $index);
 
 //Remove the temporal documentation
-unlink('tmp_reference.html');
-unlink('tmp_reference.xml');
+unlink($path . '/tmp_reference.html');
+unlink($path . '/tmp_reference.xml');
 
 echo 'PHP Documentation updated successfully';
