@@ -12,6 +12,7 @@ This is textmate bundle with a few useful snippets for PHP and HTML
 * Show reference of actual PHP function
 * Update the bundle itself
 * Update the PHP reference documentation
+* Built-in common php design patterns
 
 
 How to install

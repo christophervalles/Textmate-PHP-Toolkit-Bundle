@@ -6,6 +6,8 @@
 	<string>die(var_dump('`echo $RANDOM`'));</string>
 	<key>name</key>
 	<string>die(var_dump(RANDOM));</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>dvr</string>
 	<key>uuid</key>

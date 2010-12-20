@@ -5,7 +5,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>php_beautifier -s4 -l "ArrayNested() DocBlock() NewLines(after=T_DOC_COMMENT,before=function)"
+	<string>php_beautifier -s4 -l "ArrayNested() DocBlock() NewLines(before=T_CLASS:T_COMMENT,after=T_COMMENT)"
 
 # NewLines before=T_CLASS:function:T_COMMENT,after=T_COMMENT)
 

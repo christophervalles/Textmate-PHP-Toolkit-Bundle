@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * ${1:Singleton pattern}
+ *
+ * @package ${2:default}
+ */
+class ${3:Singleton}{
+    /**
+     * Store the resource
+     * 
+     * @var $3 \$_resource
+     */
+    private static \$_resource = null;
+    
+    /**
+     * Convenience method to get an instance of the object
+     *
+     * @return $3
+     */
+    public static function get(){
+        if(!self::\$_resource instanceof self){
+            self::\$_resource = new self;
+        }
+        
+        return self;
+    }
+    
+    /**
+     * Private constructor to avoid creation of objects
+     */
+    private function __construct(){
+    }
+    
+    /**
+     * Avoid unwanted clonation of the object
+     *
+     * @return Exception
+     */
+    private function __clone(){
+        throw new Exception(sprintf('Clonation of %s not allowed.', __CLASS__));
+    }
+}</string>
+	<key>name</key>
+	<string>Singleton Pattern</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>singleton</string>
+	<key>uuid</key>
+	<string>DF7EF56B-D427-41AC-B941-AD25770419EB</string>
+</dict>
+</plist>

@@ -26,15 +26,44 @@
 			<dict>
 				<key>items</key>
 				<array>
-					<string>B8AB8A7E-81CB-45BE-A627-60A5AA5E70B8</string>
+					<string>509F9245-45FA-49DD-838C-4872B30F541D</string>
+					<string>5588B5FF-9831-49F4-A65A-771A979681FA</string>
+					<string>6E84621C-9B87-42B4-9D26-6206F031223A</string>
+				</array>
+				<key>name</key>
+				<string>PHP</string>
+			</dict>
+			<key>509F9245-45FA-49DD-838C-4872B30F541D</key>
+			<dict>
+				<key>items</key>
+				<array>
 					<string>C302AA79-FEC8-4884-80A8-606CBEE0CAA0</string>
 					<string>AF432E20-480F-48D5-A531-E0A5F23CDC3A</string>
 					<string>FA0566EB-B33F-4E10-A3B9-8CC25FDB8A35</string>
+				</array>
+				<key>name</key>
+				<string>Snippets</string>
+			</dict>
+			<key>5588B5FF-9831-49F4-A65A-771A979681FA</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>B8AB8A7E-81CB-45BE-A627-60A5AA5E70B8</string>
 					<string>FC63F120-0FB3-4223-9F1B-C70F746FE7FC</string>
 					<string>2A1D9811-4188-4A20-9297-AAA5BA5EAC04</string>
 				</array>
 				<key>name</key>
-				<string>PHP</string>
+				<string>Utilities</string>
+			</dict>
+			<key>6E84621C-9B87-42B4-9D26-6206F031223A</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>DF7EF56B-D427-41AC-B941-AD25770419EB</string>
+					<string>AD6C592F-963E-4137-BBA0-0B30D1421B77</string>
+				</array>
+				<key>name</key>
+				<string>Design Patterns</string>
 			</dict>
 			<key>D088C2C8-32EF-45AC-B37B-99D4159617EF</key>
 			<dict>
@@ -60,6 +89,7 @@
 		<string>B8AB8A7E-81CB-45BE-A627-60A5AA5E70B8</string>
 		<string>7E989AD0-78A4-4DEA-9D45-FA6791C45932</string>
 		<string>3C8235A9-6DCA-4B3F-BE8D-D47D06DEC2D1</string>
+		<string>AD6C592F-963E-4137-BBA0-0B30D1421B77</string>
 	</array>
 	<key>uuid</key>
 	<string>BC337363-0563-4425-B2F8-644009857B23</string>

@@ -3,14 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>die(var_dump(\$${1:variable}));</string>
+	<string>/**
+ * ${1:Factory pattern}
+ *
+ * @package ${2:default}
+ */
+${3:abstract} class ${4:Factory}{
+	public static function ${5:create}($type){
+		return new \$type();
+ 	}
+}</string>
 	<key>name</key>
-	<string>die(var_dump());</string>
+	<string>Factory Pattern</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>tabTrigger</key>
-	<string>dvv</string>
+	<string>factory</string>
 	<key>uuid</key>
-	<string>AF432E20-480F-48D5-A531-E0A5F23CDC3A</string>
+	<string>AD6C592F-963E-4137-BBA0-0B30D1421B77</string>
 </dict>
 </plist>

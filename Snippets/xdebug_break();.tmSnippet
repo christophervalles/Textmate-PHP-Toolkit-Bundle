@@ -6,6 +6,8 @@
 	<string>xdebug_break();</string>
 	<key>name</key>
 	<string>xdebug_break();</string>
+	<key>scope</key>
+	<string>source.php</string>
 	<key>tabTrigger</key>
 	<string>xb</string>
 	<key>uuid</key>
