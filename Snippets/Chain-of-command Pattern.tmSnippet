@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * ${1:Chain-on-command pattern}
+ *
+ * @package ${2:default}
+ */
+class ${3:CommandChain}{
+    /**
+     * Store the available commands
+     *
+     * @var array
+     */
+    private \$_commands = array();
+    
+    /**
+     * Add a new command to the chain
+     *
+     * @param object \$cmd
+     * @return void
+     */
+    public function addCommand(\$cmd){
+        if(is_object(\$cmd) &amp;&amp; !array_key_exists(get_class(\$cmd), \$this-&gt;_commands)){
+            \$this-&gt;_commands[get_class(\$cmd)] = \$cmd;
+        }
+    }
+    
+    /**
+     * Run a command through the command chain
+     *
+     * @param string \$name
+     * @param mixed \$args
+     * @return void
+     */
+    public function runCommand(\$name, \$args){
+        foreach(\$this-&gt;_commands as \$cmd){
+            if(\$cmd-&gt;onCommand(\$name, \$args)){
+                return;
+            }
+        }
+    }
+}
+
+/**
+ * ${4:Concrete command}
+ *
+ * @package ${5:default}
+ */
+class ${6:UserCommand}{
+    private \$_commandName = '${7:addUser}';
+    
+    /**
+     * Convenience method to run the command
+     *
+     * @param string \$name
+     * @param mixed \$args
+     * @return boolean
+     */
+    public function onCommand(\$name, \$args){
+        if(strcasecmp(\$name, \$this-&gt;_commandName) !== 0){
+            return FALSE;
+        }
+        
+        //Do the command
+        echo "${6} handling '${7}'\n";
+        
+        return TRUE;
+    }
+}</string>
+	<key>name</key>
+	<string>Chain-of-command Pattern</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>chainofcommand</string>
+	<key>uuid</key>
+	<string>E5AA1675-0696-4D3F-9C29-D9CEAD06F198</string>
+</dict>
+</plist>

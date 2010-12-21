@@ -60,7 +60,10 @@
 				<key>items</key>
 				<array>
 					<string>DF7EF56B-D427-41AC-B941-AD25770419EB</string>
+					<string>36760322-3240-4B18-B6D9-F65B0A161042</string>
 					<string>AD6C592F-963E-4137-BBA0-0B30D1421B77</string>
+					<string>E5AA1675-0696-4D3F-9C29-D9CEAD06F198</string>
+					<string>FF47551F-5AEF-440A-9EE6-AD7176DC41F4</string>
 				</array>
 				<key>name</key>
 				<string>Design Patterns</string>
@@ -90,6 +93,10 @@
 		<string>7E989AD0-78A4-4DEA-9D45-FA6791C45932</string>
 		<string>3C8235A9-6DCA-4B3F-BE8D-D47D06DEC2D1</string>
 		<string>AD6C592F-963E-4137-BBA0-0B30D1421B77</string>
+		<string>E5AA1675-0696-4D3F-9C29-D9CEAD06F198</string>
+		<string>FF47551F-5AEF-440A-9EE6-AD7176DC41F4</string>
+		<string>36760322-3240-4B18-B6D9-F65B0A161042</string>
+		<string>DF7EF56B-D427-41AC-B941-AD25770419EB</string>
 	</array>
 	<key>uuid</key>
 	<string>BC337363-0563-4425-B2F8-644009857B23</string>

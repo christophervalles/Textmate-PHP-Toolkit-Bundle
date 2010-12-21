@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * ${1:Startegy Pattern}
+ *
+ * @package ${2:default}
+ */
+class ${3:RandomStrategy}{
+    /**
+     * Evaluate the info and act as needed
+     *
+     * @param string \$record
+     * @return boolean
+     */
+    public function filter(\$record){
+        return rand(0, 1) &gt;= 0.5;
+    }
+}
+
+/**
+ * ${4:List that holds the users}
+ *
+ * @package ${5:default}
+ */
+class ${6:UserList}{
+    /**
+     * Store the items of the list
+     *
+     * @var array
+     */
+    private \$_list = array();
+    
+    /**
+     * Receive an array to populate the list when building the object
+     *
+     * @param array \$names
+     */
+    public function __construct(\$names){
+        if(!is_null(\$names)){
+            foreach(\$names as \$name){
+                \$this-&gt;_list[] = \$name;
+            }
+        }
+    }
+    
+    /**
+     * Add a new name to the list
+     *
+     * @param string \$name
+     * @return void
+     */
+    public function add(\$name){
+        \$this-&gt;_list[] = \$name;
+    }
+    
+    /**
+     * Find over the list based on a filter
+     *
+     * @param object \$filter
+     * @return array
+     */
+    public function find(\$filter){
+        if(!is_object(\$filter)){
+            throw new Exception('The filter must be and object');
+        }
+        
+        \$results = array();
+        foreach(\$this-&gt;_list as \$user){
+            if(\$filter-&gt;filter(\$user)){
+                \$results[] = \$user;
+            }
+        }
+        
+        return \$results;
+    }
+}</string>
+	<key>name</key>
+	<string>Strategy Pattern</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>strategy</string>
+	<key>uuid</key>
+	<string>FF47551F-5AEF-440A-9EE6-AD7176DC41F4</string>
+</dict>
+</plist>

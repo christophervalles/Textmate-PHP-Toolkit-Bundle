@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>/**
+ * ${1:Observer pattern}
+ *
+ * @package ${2:default}
+ */
+class ${3:Observable}{
+    /**
+     * Store the observers
+     *
+     * @var array
+     */
+    private \$_observers = array();
+    
+    /**
+     * Example of use
+     *
+     * @param string \$name 
+     * @return void
+     */
+    public function addCustomer(\$name){
+        foreach(\$this-&gt;_observers as \$o){
+            \$o-&gt;onChanged(\$this, \$name);
+        }
+    }
+    
+    /**
+     * Add a new observer to the list
+     *
+     * @param object \$observer 
+     * @return void
+     */
+    public function addObserver(\$observer){
+        if(is_object(\$observer) &amp;&amp; !array_key_exists(get_class(\$observer), \$this-&gt;_observers)){
+            \$this-&gt;_observers[get_class(\$observer)] = \$observer;
+        }
+    }
+}
+
+/**
+ * ${4:Observer}
+ *
+ * @package ${5:default}
+ */
+class ${6:Observer}{
+    /**
+     * Do something when notified
+     *
+     * @param object \$sender 
+     * @param mixed \$args 
+     * @return void
+     */
+    public function onChanged(\$sender, \$args){
+        echo sprintf('notification from %s with message %s', get_class(\$sender), \$args);
+    }
+}</string>
+	<key>name</key>
+	<string>Observer Pattern</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>observer</string>
+	<key>uuid</key>
+	<string>36760322-3240-4B18-B6D9-F65B0A161042</string>
+</dict>
+</plist>
