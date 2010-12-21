@@ -33,7 +33,10 @@ foreach($functions as $f){
     $funcVer = $f->div[0]->p[0];
     $funcSignature = str_replace("\n", '', strip_tags($f->div[1]->div->asXML()));
     $funcSignature = preg_replace('/\s[\s]*/', ' ', $funcSignature);
-    $funcDescription = str_replace("\n", '', strip_tags($f->div[1]->p));
+    $funcSignature = str_replace(' , ', ', ', $funcSignature);
+    $funcDescription = str_replace("\n", ' ', strip_tags($f->div[1]->p));
+    $funcDescription = preg_replace('/\s[\s]*/', ' ', $funcDescription);
+    $funcDescription = str_replace(' , ', ', ', $funcDescription);
     
     $index .= serialize(array(
         htmlspecialchars_decode($funcName), 
