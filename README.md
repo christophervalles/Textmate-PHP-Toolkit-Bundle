@@ -21,7 +21,7 @@ How to install
 Execute the following commands:
 
     cd ~/Library/Application\ Support/TextMate/Bundles
-    git clone git://github.com/christophervalles/Textmate-Useful-Snippets-Bundle.git Useful\ Snippets.tmbundle
+    git clone git://github.com/christophervalles/Textmate-Useful-Snippets-Bundle.git PHP\ Toolkit.tmbundle
 
 Dependencies
 ============
