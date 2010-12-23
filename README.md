@@ -1,3 +1,13 @@
+Repository moved
+================
+
+I moved the repository of this bundle to a new url to adapt it to the new name of the bundle.
+If you have my bundle cloned you will have to modify it to fetch it from the new url.
+
+The easy way to do it is just remove it and follow the instructions below.
+If you want to choose the hard way you have to modify the file .git/config located inside the bundle
+and change the url with the new one "git://github.com/christophervalles/Textmate-PHP-Toolkit-Bundle.git"
+
 Description
 ===============
 
@@ -13,7 +23,6 @@ This is textmate bundle with a few useful snippets for PHP and HTML
 * Update the bundle itself
 * Update the PHP reference documentation
 * Built-in common php design patterns
-
 
 How to install
 ==============
