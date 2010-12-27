@@ -31,7 +31,7 @@ $functions = $xml->xpath('//div[@class="refentry"]');
 foreach($functions as $f){
     $funcName = $f->div[0]->h1;
     $funcVer = $f->div[0]->p[0];
-    $funcSignature = str_replace("\n", '', strip_tags($f->div[1]->div->asXML()));
+    $funcSignature = str_replace("\n", ' ', strip_tags($f->div[1]->div->asXML()));
     $funcSignature = preg_replace('/\s[\s]*/', ' ', $funcSignature);
     $funcSignature = str_replace(' , ', ', ', $funcSignature);
     $funcDescription = str_replace("\n", ' ', strip_tags($f->div[1]->p));
