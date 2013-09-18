@@ -5,17 +5,28 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>cd "$TM_BUNDLE_PATH"
+	<string>#!/usr/bin/env bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+cd "$TM_BUNDLE_SUPPORT/../"
 rv=`$TM_GIT pull`
 
 rv=`CocoaDialog ok-msgbox --text "$rv" --icon info --no-cancel --float --timeout 30`</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Update bundle</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
 	<key>uuid</key>
 	<string>7E989AD0-78A4-4DEA-9D45-FA6791C45932</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
