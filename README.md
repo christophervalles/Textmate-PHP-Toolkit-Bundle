@@ -29,7 +29,7 @@ How to install
 
 Execute the following commands:
 
-    cd ~/Library/Application\ Support/TextMate/Bundles
+    cd ~/Library/Application\ Support/Avian/Bundles/
     git clone git://github.com/christophervalles/Textmate-PHP-Toolkit-Bundle.git PHP\ Toolkit.tmbundle
 
 Dependencies
