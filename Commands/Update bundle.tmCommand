@@ -6,7 +6,7 @@
 	<string>nop</string>
 	<key>command</key>
 	<string>cd "$TM_BUNDLE_PATH"
-rv=`git pull`
+rv=`$TM_GIT pull`
 
 rv=`CocoaDialog ok-msgbox --text "$rv" --icon info --no-cancel --float --timeout 30`</string>
 	<key>input</key>

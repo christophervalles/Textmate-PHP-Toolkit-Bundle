@@ -5,30 +5,31 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>#!/usr/bin/env bash
-[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
-
-echo `/usr/local/bin/php-cs-fixer fix $TM_FILEPATH --level=all`</string>
-	<key>fallbackInput</key>
-	<string>document</string>
+	<string>#!/usr/bin/env ruby
+require ENV['TM_SUPPORT_PATH'] + '/lib/textmate'
+version = %x{#{ENV['TM_PHP'] || 'php'} -v}.split[0..2].join(' ')
+puts "Running syntax check with " + version
+result = `#{ENV['TM_PHP'] || 'php'} -d display_errors=on -l`
+puts result.gsub('in -', '')
+TextMate.go_to :line =&gt; $1 if result =~ /line (\d+)/</string>
 	<key>input</key>
-	<string>none</string>
+	<string>document</string>
 	<key>inputFormat</key>
 	<string>text</string>
 	<key>keyEquivalent</key>
-	<string>^H</string>
+	<string>@s</string>
 	<key>name</key>
-	<string>Tidy</string>
+	<string>Check syntax when saving</string>
 	<key>outputCaret</key>
-	<string>interpolateByLine</string>
+	<string>afterOutput</string>
 	<key>outputFormat</key>
 	<string>text</string>
 	<key>outputLocation</key>
-	<string>discard</string>
+	<string>toolTip</string>
 	<key>scope</key>
 	<string>source.php</string>
 	<key>uuid</key>
-	<string>2A1D9811-4188-4A20-9297-AAA5BA5EAC04</string>
+	<string>2E21151D-43D5-4637-B647-66558AB1ED89</string>
 	<key>version</key>
 	<integer>2</integer>
 </dict>
