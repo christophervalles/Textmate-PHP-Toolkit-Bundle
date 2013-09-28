@@ -7,7 +7,6 @@
 		<key>items</key>
 		<array>
 			<string>30916F46-DCF8-4F8E-AB8B-9575F9EFC05E</string>
-			<string>D088C2C8-32EF-45AC-B37B-99D4159617EF</string>
 			<string>23B2C56C-10C7-4EF7-AF9E-615EDE2A23E0</string>
 		</array>
 		<key>submenus</key>
@@ -68,15 +67,6 @@
 				</array>
 				<key>name</key>
 				<string>Design Patterns</string>
-			</dict>
-			<key>D088C2C8-32EF-45AC-B37B-99D4159617EF</key>
-			<dict>
-				<key>items</key>
-				<array>
-					<string>C791D638-EB7D-4BE6-BAB0-00E97A35BC27</string>
-				</array>
-				<key>name</key>
-				<string>Textmate</string>
 			</dict>
 		</dict>
 	</dict>
